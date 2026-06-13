@@ -520,3 +520,53 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 .task-row { animation: slideIn 0.18s ease; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .app { grid-template-columns: 1fr; }
+
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 0.5px solid var(--border-md);
+    padding-bottom: 0;
+  }
+  .sidebar::-webkit-scrollbar { display: none; }
+
+  .brand {
+    border-bottom: none;
+    padding: 10px 14px;
+    flex-shrink: 0;
+  }
+  .brand-tagline { display: none; }
+
+  .nav-section-label { display: none; }
+
+  .nav-item {
+    padding: 12px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-item.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--ink);
+  }
+
+  .sidebar-footer { display: none; }
+
+  .topbar { padding: 12px 14px; }
+
+  .content { padding: 14px; gap: 14px; }
+
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-card { padding: 12px 14px; }
+  .stat-val { font-size: 22px; }
+}
